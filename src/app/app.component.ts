@@ -19,10 +19,15 @@ export class AppComponent {
       firstname: new FormControl(null),
       lastname: new FormControl(null),
       email: new FormControl(null),
-      gender: new FormControl(null),
-      country: new FormControl(null),
+      gender: new FormControl('male'),
+      country: new FormControl('bd'),
       hobbies: new FormControl(null)
 
     });
+  }
+
+  onSubmit(){
+    console.log(this.reactiveForm)
+
   }
 }
