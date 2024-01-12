@@ -1,1 +1,52 @@
-<router-outlet></router-outlet>
+<div class="form">
+  <h2 id="registration">Registration Form</h2>
+  <form> 
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" placeholder="Your first Name.." 
+          name="firstname">
+    
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" placeholder="Your Last Name.." >
+
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Email" >
+      <div>
+        <small >Some of The required fileds does not have valid value</small>
+      </div>
+      
+
+    
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+      <option value="india">India</option>
+      <option value="uk">UK</option>
+    </select>
+
+    <label for="gender">Gender</label>
+      <input type="radio" id="" value="" name="gender">
+      <label for="male"></label>
+
+    <br><br>
+
+    <label>Hobbies <i>(optional)</i></label>
+    <div class="form-inline">
+      <label><input type="checkbox" value="sprots">Sports</label>
+      <label><input type="checkbox" value="movies">Movies</label>
+      <label><input type="checkbox" value="sprots">Music</label>
+    </div>
+
+    <input type="submit" value="Submit" id="btn" > <!--[disabled]="!myForm.valid"-->
+  </form>
+
+
+<div class="form-data">
+  <h3>Form Data</h3>
+  <p>First Name: <b></b></p>
+  <p>Last Name: <b></b></p>
+  <p>Email: <b></b></p>
+  <p>Country: <b></b></p>
+  <p>Gender: <b></b></p>
+</div>
