@@ -1,16 +1,28 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Reactive Forms';
   reactiveForm: FormGroup;
+
+  ngOnInit(){
+    this.reactiveForm = new FormGroup({
+      firstname: new FormControl(null),
+      lastname: new FormControl(null),
+      email: new FormControl(null),
+      gender: new FormControl(null),
+      country: new FormControl(null),
+      hobbies: new FormControl(null)
+
+    });
+  }
 }
