@@ -18,7 +18,7 @@ export class AppComponent {
     this.reactiveForm = new FormGroup({
       firstname: new FormControl(null, Validators.required),  // for more validation visit 
       lastname: new FormControl(null, Validators.required),   // https://angular.io/api/forms/Validators
-      email: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       gender: new FormControl('male'),
       country: new FormControl('bd'),
       hobbies: new FormControl(null)
