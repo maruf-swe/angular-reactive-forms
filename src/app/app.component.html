@@ -10,10 +10,11 @@
 
       <label for="email">Email</label>
       <input type="text" id="email" placeholder="Email" formControlName="email">
-      <!-- <div>
-        <small >Some of The required fileds does not have valid value</small>
+      <div>
+        <span style="color: red;">
+          *ngIf="reactiveForm.get('email').valid">The email you entered is not a valid email.
+        </span>
       </div>
-       -->
 
     
     <label for="country">Country</label>
