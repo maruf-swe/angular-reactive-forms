@@ -13,7 +13,7 @@
       <input type="text" id="email" placeholder="Email" formControlName="email">
       <div>
         <span style="color: red;">
-          *ngIf="reactiveForm.get('personalDetails.email').valid">The email you entered is not a valid email.
+          *ngIf="reactiveForm.get('personalDetails.email').valid && "reactiveForm.get('personalDetails.email').touched"> The email you entered is not a valid email.
         </span>
       </div>
     </div>
