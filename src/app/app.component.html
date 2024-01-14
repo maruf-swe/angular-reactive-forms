@@ -1,6 +1,7 @@
 <div class="form">
   <h2 id="registration">Registration Form</h2>
   <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()"> 
+    <div [formGroupName]="personalDetails">
       <label for="fname">First Name</label>
       <input type="text" id="fname" placeholder="Your first Name.." 
           formControlName="firstname">
@@ -12,9 +13,10 @@
       <input type="text" id="email" placeholder="Email" formControlName="email">
       <div>
         <span style="color: red;">
-          *ngIf="reactiveForm.get('email').valid">The email you entered is not a valid email.
+          *ngIf="reactiveForm.get('personalDetails.email').valid">The email you entered is not a valid email.
         </span>
       </div>
+    </div>
 
     
     <label for="country">Country</label>
