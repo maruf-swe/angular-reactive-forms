@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,12 @@ export class AppComponent {
       email: new FormControl(null, [Validators.required, Validators.email]),
       gender: new FormControl('male'),
       country: new FormControl('bd'),
-      hobbies: new FormControl(null)
+      hobbies: new FormControl(null),
+      skills: new FormArray([
+        new FormControl(null),
+        new FormControl(null),
+        new FormControl(null)
+      ])
 
     });
   }

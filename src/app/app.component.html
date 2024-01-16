@@ -11,8 +11,8 @@
       <label for="email">Email</label>
       <input type="text" id="email" placeholder="Email" formControlName="email">
       <div>
-        <span style="color: red;">
-          *ngIf="reactiveForm.get('email').valid">The email you entered is not a valid email.
+        <span style="color: red;"
+          *ngIf="!reactiveForm.get('email').valid">The email is not a valid email.
         </span>
       </div>
 
@@ -43,6 +43,12 @@
       <label><input type="checkbox" value="sprots" formControlName="hobbies">Sports</label>
       <label><input type="checkbox" value="movies" formControlName="hobbies">Movies</label>
       <label><input type="checkbox" value="sprots" formControlName="hobbies">Music</label>
+    </div>
+    <div formArrayName="skills">
+      <ng-container *ngFor="let skill of reactiveForm.get('skills')['controls']">
+        <input type="text" placeholder="add skill..">
+
+      </ng-container>
     </div>
 
     <input type="submit" value="Submit" id="btn" > <!--[disabled]="!myForm.valid"-->
