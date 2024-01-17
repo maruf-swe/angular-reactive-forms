@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormControl } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -26,4 +27,8 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-reactive-forms');
   });
+
+  addSkils(){
+    this.reactiveForm.get('skill;').push(new FormControl(null));
+  }
 });

@@ -23,9 +23,9 @@ export class AppComponent {
       country: new FormControl('bd'),
       hobbies: new FormControl(null),
       skills: new FormArray([
-        new FormControl(null),
-        new FormControl(null),
-        new FormControl(null)
+        new FormControl(null, Validators.required),
+        new FormControl(null, Validators.required),
+        new FormControl(null, Validators.required)
       ])
 
     });
