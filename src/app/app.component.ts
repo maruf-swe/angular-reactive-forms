@@ -25,8 +25,6 @@ export class AppComponent {
       country: new FormControl('bd'),
       hobbies: new FormControl(null),
       skills: new FormArray([
-        new FormControl(null, Validators.required),
-        new FormControl(null, Validators.required),
         new FormControl(null, Validators.required)
       ])
 
@@ -39,6 +37,7 @@ export class AppComponent {
   }
 
   addSkils(){
+    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null))
 
   }
 }
