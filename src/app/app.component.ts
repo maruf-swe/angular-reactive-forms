@@ -37,7 +37,13 @@ export class AppComponent {
   }
 
   addSkils(){
-    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null))
+    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null, Validators.required))
 
+  }
+
+  noSpaceAllowed(control: FormControl){
+    if(control.value != null && control.value.indexof(' ') != -1){
+      return
+    }
   }
 }
