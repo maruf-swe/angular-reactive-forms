@@ -16,12 +16,11 @@ export class AppComponent {
 
   ngOnInit(){
     this.reactiveForm = new FormGroup({
-      personalDetails = new FormGroup({
+      personalDetails: new FormGroup({
         firstname: new FormControl(null, Validators.required),  // for more validation visit 
         lastname: new FormControl(null, Validators.required),   // https://angular.io/api/forms/Validators
-        email: new FormControl(null, [Validators.required, Validators.email]),
-        
-      });
+        email: new FormControl(null, [Validators.required, Validators.email])
+      }),
       gender: new FormControl('male'),
       country: new FormControl('bd'),
       hobbies: new FormControl(null),
@@ -36,6 +35,10 @@ export class AppComponent {
 
   onSubmit(){
     console.log(this.reactiveForm)
+
+  }
+
+  addSkils(){
 
   }
 }
