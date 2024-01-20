@@ -20,7 +20,7 @@ export class AppComponent {
       personalDetails: new FormGroup({
         firstname: new FormControl(null, Validators.required),  // for more validation visit 
         lastname: new FormControl(null, Validators.required),   // https://angular.io/api/forms/Validators
-        email: new FormControl(null, [Validators.required, Validators.email])
+        email: new FormControl(null, [Validators.required, Validators.email], this.emailNotAllowed)
       }),
       gender: new FormControl('male'),
       country: new FormControl('bd'),
@@ -53,7 +53,7 @@ export class AppComponent {
     const response = new Promise((resolve,reject) =>{
       setTimeout(()=>{
         if(control.value === 'procodemy@gmail.com'){
-          resolve({this.emailNotAllowed: true})
+          resolve({emailNotAllowed: true})
         }else{
           resolve(null)
         }
