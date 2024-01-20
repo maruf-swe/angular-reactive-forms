@@ -6,6 +6,10 @@
       <label for="fname">First Name</label>
       <input type="text" id="fname" placeholder="Your first Name.." 
           formControlName="firstname">
+      <div>
+        <small *ngIf="reactiveForm.get('personalDetails.firstname').errors?.['required']">First Name is required field</small>
+        <small *ngIf="reactiveForm.get('personalDetails.firstname').errors?.['noSpaceAllowed']">First Name cannot contain a space</small>
+      </div>
     
       <label for="lname">Last Name</label>
       <input type="text" id="lname" placeholder="Your Last Name.." formControlName="lastname">
