@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -46,5 +47,19 @@ export class AppComponent {
       return {noSpaceAllowed: true}
     }
     return null;
+  }
+
+  emailNotAllowed(control: FormControl): Promise<any> | Observable<any>{
+    const response = new Promise((resolve,reject) =>{
+      setTimeout(()=>{
+        if(control.value === 'procodemy@gmail.com'){
+          resolve({this.emailNotAllowed: true})
+        }else{
+          resolve(null)
+        }
+      },5000)
+
+    });
+    return response;
   }
 }
