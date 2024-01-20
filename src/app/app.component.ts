@@ -43,7 +43,8 @@ export class AppComponent {
 
   noSpaceAllowed(control: FormControl){
     if(control.value != null && control.value.indexof(' ') != -1){
-      return
+      return {noSpaceAllowed: true}
     }
+    return null;
   }
 }
