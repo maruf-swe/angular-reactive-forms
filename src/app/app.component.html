@@ -4,7 +4,7 @@
 
     <div formGroupName="personalDetails">
       <label for="fname">First Name</label>
-      <input type="text" id="fname" placeholder="Your first Name.." 
+      <input type="text" id="fname" placeholder="Your first Name" 
           formControlName="firstname">
       <div>
         <small *ngIf="reactiveForm.get('personalDetails.firstname').errors?.['required']">First Name is required field</small>
@@ -12,7 +12,7 @@
       </div>
     
       <label for="lname">Last Name</label>
-      <input type="text" id="lname" placeholder="Your Last Name.." formControlName="lastname">
+      <input type="text" id="lname" placeholder="Your Last Name" formControlName="lastname">
 
       <label for="email">Email</label>
       <input type="text" id="email" placeholder="Email" formControlName="email">
